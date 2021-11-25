@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 25, 2021 at 01:23 PM
+-- Generation Time: Nov 25, 2021 at 02:08 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `jadwal` (
   `id` int(11) NOT NULL,
-  `kode` int(20) NOT NULL,
+  `kode` varchar(20) NOT NULL,
   `name` varchar(50) NOT NULL,
   `sks` int(11) NOT NULL DEFAULT 1,
   `semester` int(11) NOT NULL DEFAULT 1,
