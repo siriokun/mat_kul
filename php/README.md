@@ -16,4 +16,7 @@ Database Password (kosong)
 ## API
 
 1. Create : http://localhost/matkul/create.php
-2. Update : 
+2. Update : http://localhost/matkul/update.php
+3. Delete : http://localhost/matkul/delete.php
+4. Detail : http://localhost/matkul/detail.php
+5. List : http://localhost/matkul/list.php
