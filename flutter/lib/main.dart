@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mata Kuliah v1.0.0',
+      title: 'Mata Kuliah v1.0.1',
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),

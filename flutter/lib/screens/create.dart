@@ -16,14 +16,20 @@ class _CreateState extends State<Create> {
 // Required for form validations
   final formKey = GlobalKey<FormState>();
 // Handles text onchange
+  TextEditingController kodeController = new TextEditingController();
   TextEditingController nameController = new TextEditingController();
+  TextEditingController sksController = new TextEditingController();
+  TextEditingController semesterController = new TextEditingController();
   TextEditingController dosenController = new TextEditingController();
 // Http post request to create new data
   Future _createStudent() async {
     return await http.post(
       "${Env.URL_PREFIX}/create.php",
       body: {
+        "kode": kodeController.text,
         "name": nameController.text,
+        "sks": sksController.text,
+        "semester": semesterController.text,
         "dosen": dosenController.text,
       },
     );

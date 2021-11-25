@@ -15,7 +15,10 @@ class _EditState extends State<Edit> {
 // This is  for form validations
   final formKey = GlobalKey<FormState>();
 // This is for text onChange
+  TextEditingController kodeController;
   TextEditingController nameController;
+  TextEditingController sksController;
+  TextEditingController semesterController;
   TextEditingController dosenController;
 // Http post request
   Future editStudent() async {
@@ -23,7 +26,10 @@ class _EditState extends State<Edit> {
       "${Env.URL_PREFIX}/update.php",
       body: {
         "id": widget.student.id.toString(),
+        "kode": kodeController.text,
         "name": nameController.text,
+        "sks": sksController.text,
+        "semester": semesterController.text,
         "dosen": dosenController.text
       },
     );

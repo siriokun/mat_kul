@@ -4,23 +4,19 @@ class AppForm extends StatefulWidget {
 // Required for form validations
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 // Handles text onchange
+  TextEditingController kodeController;
   TextEditingController nameController;
+  TextEditingController sksController;
+  TextEditingController semesterController;
   TextEditingController dosenController;
-  AppForm({this.formKey, this.nameController, this.dosenController});
+  AppForm({this.formKey, this.kodeController, this.nameController, this.sksController, this.semesterController, this.dosenController});
   @override
   _AppFormState createState() => _AppFormState();
 }
 
 class _AppFormState extends State<AppForm> {
-  String _validateName(String value) {
+  String _validateInput(String value) {
     if (value.length < 6) return 'Minimal 5 karakter';
-    return null;
-  }
-
-  String _validateAge(String value) {
-    Pattern pattern = r'(?<=\s|^)\d+(?=\s|$)';
-    RegExp regex = new RegExp(pattern);
-    if (!regex.hasMatch(value)) return 'Kode dosen berupa angka';
     return null;
   }
 
@@ -32,16 +28,34 @@ class _AppFormState extends State<AppForm> {
       child: Column(
         children: <Widget>[
           TextFormField(
+            controller: widget.dosenController,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(labelText: 'Kode Mata Kuliah'),
+            validator: _validateInput,
+          ),
+          TextFormField(
             controller: widget.nameController,
             keyboardType: TextInputType.text,
-            decoration: InputDecoration(labelText: 'Name'),
-            validator: _validateName,
+            decoration: InputDecoration(labelText: 'Nama Mata Kuliah'),
+            validator: _validateInput,
+          ),
+          TextFormField(
+            controller: widget.sksnController,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(labelText: 'SKS'),
+            validator: _validateInput,
+          ),
+          TextFormField(
+            controller: widget.semesterController,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(labelText: 'Semester'),
+            validator: _validateInput,
           ),
           TextFormField(
             controller: widget.dosenController,
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(labelText: 'Kode Dosen'),
-            validator: _validateAge,
+            decoration: InputDecoration(labelText: 'Dosen'),
+            validator: _validateInput,
           ),
         ],
       ),

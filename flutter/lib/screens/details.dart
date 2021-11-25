@@ -71,14 +71,35 @@ class _DetailsState extends State<Details> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              "Name : ${widget.student.name}",
+              "Kode Matakuliah : ${widget.student.kode}",
               style: TextStyle(fontSize: 20),
             ),
             Padding(
               padding: EdgeInsets.all(10),
             ),
             Text(
-              "Kode Dosen : ${widget.student.dosen}",
+              "Nama Matakuliah : ${widget.student.name}",
+              style: TextStyle(fontSize: 20),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+            ),
+            Text(
+              "SKS : ${widget.student.sks}",
+              style: TextStyle(fontSize: 20),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+            ),
+            Text(
+              "Semester : ${widget.student.semester}",
+              style: TextStyle(fontSize: 20),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+            ),
+            Text(
+              "Nama Dosen Pengampu : ${widget.student.dosen}",
               style: TextStyle(fontSize: 20),
             ),
           ],
